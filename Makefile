@@ -1,7 +1,12 @@
-all: index.html
+all: dest/index.html dest/kumar_small.jpg
 
-index.html: index_base.html publications_conference.html publications_journal.html
-	python3 render_publications.py > index.html
+dest/index.html: index_base.html publications_conference.html publications_journal.html
+	mkdir -p dest
+	python3 render_publications.py > dest/index.html
+
+dest/kumar_small.jpg: kumar_small.jpg
+	mkdir -p dest
+	cp kumar_small.jpg dest/kumar_small.jpg
 
 publications_conference.html: publications_conference.bib
 	jabref -n -o test.csv,oocsv publications_conference.bib && \
@@ -15,4 +20,4 @@ publications_journal.html: publications_journal.bib
 
 .PHONY: clean
 clean:
-	$(RM) test.csv publications_journal.html publications_conference.html index.html
+	$(RM) test.csv publications_journal.html publications_conference.html index.html dest/*
