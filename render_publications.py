@@ -1,4 +1,4 @@
-import jinja2
+import jinja2, time
 
 loader = jinja2.FileSystemLoader(searchpath=".")
 env = jinja2.Environment(loader=loader)
@@ -11,6 +11,7 @@ with open("publications_journal.html") as f:
     journal_pubs = f.read()
 
 templateVars = { "conference" : conf_pubs,
-		 "journal" : journal_pubs }
+		 "journal" : journal_pubs,
+		 "last_updated_on" : time.strftime("Last updated on %d/%m/%Y at %H:%M %Z", time.localtime())}
 
 print(template.render(templateVars))
