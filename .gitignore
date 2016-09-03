@@ -2,3 +2,5 @@ index.html
 publications_conference.html
 publications_journal.html
 auto/*
+dest/
+copy_website.sh
