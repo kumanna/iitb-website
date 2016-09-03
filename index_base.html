@@ -27,12 +27,22 @@
 	   font-family: 'Crimson Text', serif;
 	   font-size : 2em ;
 	 }
+	 .nametitle {
+	     text-align : left ;
+	  }
+	   @media screen and (max-width: 48em) {
+	     .nametitle {
+		 text-align: center;
+	     }
+	   }
 	</style> 
     </head>
     <body>
 	<div class="container">
-	    <div class="page-header col-sm-12 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-	    <h1>Kumar Appaiah</h1>
+	    <div class="page-header">
+		<div class="nametitle">
+		    <h1>Kumar Appaiah</h1>
+		</div>
 	    </div>
 	    <div class="col-md-2 col-sm-4 col-xs-6 col-xs-offset-3 col-sm-offset-0">
 		<img src="./kumar_small.jpg" class="img-responsive img-rounded" alt="Kumar&#39;s photo" title="Kumar&#39;s photo" />
