@@ -18,7 +18,7 @@ for row in range(len(data['Author'])):
     # Finally, boldify the required author
     if len(sys.argv) > 2:
         author_list = author_list.replace(sys.argv[3], "<strong>" + sys.argv[3] + "</strong>")
-    data.loc[row,('Author')] = author_list
+    data.loc[row,('Author')] = author_list.replace('..', '.')
 
     urlstring = str(data['URL'][row])
     if not 'http' in urlstring:
