@@ -2,6 +2,7 @@ import pandas, sys
 
 mode = sys.argv[1]
 data = pandas.read_csv(sys.argv[2])
+data.sort_values('Identifier')
 
 # First remove the ampersand in the author list
 data['Author'] = [i.replace('&', ';') for i in data['Author']]
