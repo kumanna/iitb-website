@@ -31,9 +31,9 @@ for row in range(len(data['Author'])):
     print('&ldquo;' + data['Title'][row] + ',&rdquo; ', end="")
     print("</em>", end="")
     if mode == "conference":
-        print(data['Booktitle'][row] + " - ", end="")
+        print(data['Booktitle'][row] + " - ", end=" ")
     elif mode == "journal":
-        print(data['Journal'][row] + ", ", end="")
+        print(data['Journal'][row] + ", ", end=" ")
         print('vol. ' + str(int(data['Volume'][row])) + ", no. " + str(int(data['Number'][row])) + ' - ', end="")
     print(data['Year'][row], end="")
     if urlstring:
