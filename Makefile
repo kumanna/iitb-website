@@ -2,7 +2,7 @@ all: dest/index.html dest/kumar_small.jpg
 
 dest/index.html: index_base.html publications_conference.html publications_journal.html
 	mkdir -p dest
-	python3 render_publications.py | sed 's/vol. 0, no. 0/to appear/g;s/Murali./Murali/g' > dest/index.html
+	python3 render_publications.py | sed 's/vol. 0, no. 0/to appear/g;s/Murali./Murali/g;s/[.] [.]/./g;s/\([a-z][a-z]\)[.]/\1/g' > dest/index.html
 
 dest/kumar_small.jpg: kumar_small.jpg
 	mkdir -p dest
