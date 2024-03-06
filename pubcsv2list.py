@@ -12,9 +12,9 @@ for row in range(len(data['Author'])):
     d = data['Author'][row]
     author_list = [j[1].strip() + " " + j[0].strip() for j in [i.split(',') for i in d.split(';')]]
     # Next, split the name
-    author_list = [i.split(sep=' ', maxsplit=1) for i in author_list]
+    author_list = [[i[::-1] for i in x[::-1].split(sep=' ', maxsplit=1)][::-1] for x in author_list]
     # Reduce the first name to an initial
-    author_list = ', '.join([(i[0][0] + " " + i[1]).replace(' ', '. ') for i in author_list])
+    author_list = ', '.join([('. '.join([x[0] for x in i[0].split()]) + " " + i[1]).replace(' ', '. ') for i in author_list])
     # Finally, boldify the required author
     if len(sys.argv) > 2:
         author_list = author_list.replace(sys.argv[3], "<strong>" + sys.argv[3] + "</strong>")
