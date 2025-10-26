@@ -1,4 +1,8 @@
-all: dest/index.html dest/kumar_small.jpg
+all: dest/index.html dest/kumar_small.jpg dest/nptel_course.html
+
+dest/nptel_course.html: nptel_course.html
+	mkdir -p dest
+	cp $< $@
 
 dest/index.html: index_base.html publications_conference.html publications_journal.html
 	mkdir -p dest
